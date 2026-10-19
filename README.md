@@ -1,5 +1,7 @@
 # Portfolio de Stéphane Say — « Le conte d'Anansi »
 
+**En ligne :** https://menofgucci200-tech.github.io/my_motion/ (GitHub Pages, branche `main`)
+
 Portfolio motion design, site statique (HTML, CSS, JavaScript) sans étape de build.
 L'histoire est racontée par Anansi, l'araignée des contes akan.
 
@@ -43,15 +45,17 @@ Puis ouvrir http://localhost:5180.
 - Bo Séjour : https://bosejour.ci/
 - REJCC : https://rejcc.site/ · code : https://github.com/menofgucci200-tech/rejcc
 
-## Mettre en ligne (Hostinger ou autre hébergement statique)
+## Mise en ligne
 
-Envoyer les fichiers `.html` de la racine et le dossier `assets/` dans `public_html`.
-Le dossier `propositions/`, `.claude/` et ce README n'ont pas besoin d'être en ligne.
+Le site est publié par **GitHub Pages** depuis la branche `main` (dossier racine) :
+chaque `git push` sur `main` met le site à jour en une à deux minutes.
+Le fichier `.nojekyll` désactive le traitement Jekyll (inutile ici).
 
-Après la mise en ligne :
-- dans chaque page, mettre l'URL complète dans `og:image` (ex. `https://mondomaine.ci/assets/img/og.png`) ;
-- dans `cv.html`, remplacer `href="index.html"` du lien « Portfolio animé » par l'URL complète du site
-  et retirer la classe `no-print` de cette ligne, puis régénérer le PDF : le lien apparaîtra alors dans le CV.
+Les URL absolues (`og:image`, `og:url`, `<link rel="canonical">`) et le lien « portfolio » du CV
+pointent vers `https://menofgucci200-tech.github.io/my_motion/`. En cas de nom de domaine personnalisé,
+les remplacer dans les 8 pages puis régénérer le PDF du CV.
+
+Le dossier `propositions/` (maquettes) et `.claude/` sont exclus du dépôt par `.gitignore`.
 
 ## À compléter
 

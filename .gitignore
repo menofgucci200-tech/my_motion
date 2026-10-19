@@ -1,0 +1,10 @@
+# Maquettes explorées (contiennent une ancienne photo et des données confidentielles)
+propositions/
+
+# Configuration locale de l'éditeur / de Claude Code
+.claude/
+.playwright-mcp/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

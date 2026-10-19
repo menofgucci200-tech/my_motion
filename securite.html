@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le bouclier — sécurité applicative · Stéphane Say</title>
+<meta name="description" content="L'approche sécurité de Stéphane Say : contrôles d'accès, isolation des données, correction d'une faille IDOR, audit d'applications et sauvegardes.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Le bouclier — sécurité applicative · Stéphane Say">
+<meta property="og:description" content="L'approche sécurité de Stéphane Say : contrôles d'accès, isolation des données, correction d'une faille IDOR, audit d'applications et sauvegardes.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Ici, on parle sécurité. Je garde la porte !">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="eban" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Sécurité</p>
+  <span class="chap">🛡️ Chapitre 6 · Le bouclier</span>
+  <h1 class="split">Développer, tester, auditer, sécuriser.</h1>
+  <p class="lead">La sécurité n'est pas une option qu'on ajoute à la fin : c'est une façon de réfléchir à chaque fonctionnalité.</p>
+</section>
+
+<section id="bouclier" class="dark" data-say="Chut… il traque les failles. Regarde le code.">
+  <div class="shield-grid">
+    <div>
+      <div class="eban-wrap"><div class="eban" id="eban" aria-hidden="true"></div><p><b>Eban, la clôture</b>Symbole adinkra de la sécurité et de la protection. Je ne me demande plus seulement « comment créer cette fonctionnalité ? », mais aussi « est-elle bien conçue, sécurisée et maintenable ? »</p></div>
+      <div class="method" id="method"><span style="background:var(--gold)">Développer</span><em>→</em><span style="background:var(--teal)">Tester</span><em>→</em><span style="background:var(--pink)">Auditer</span><em>→</em><span style="background:var(--sky)">Sécuriser</span></div>
+      <ul class="shield-list">
+        <li>Isolation des données : chaque pressing ne voit que ses propres clients et commandes.</li>
+        <li>Contrôles de propriété et d'autorisation sur chaque ressource de l'API.</li>
+        <li>Faille de type IDOR identifiée et corrigée sur PressLink.</li>
+        <li>Bo Séjour : sécurité renforcée après un audit externe, sauvegardes automatiques.</li>
+        <li>Revue des endpoints, des flux de données, des redirections de paiement et des dépendances.</li>
+      </ul>
+    </div>
+    <div class="codecard" id="codecard" aria-label="Exemple de correction d'une faille IDOR">
+      <div class="top"><i></i><i></i><i></i><span>OrderController.php · PressLink</span></div>
+      <div class="code">
+        <div><span class="ln">41</span><span class="k">public function</span> <span class="f">show</span>(<span class="v">$id</span>)</div>
+        <div><span class="ln">42</span>{</div>
+        <div><span class="ln">43</span>    <span class="c">// récupère la commande demandée</span></div>
+        <div id="lineBad"><span class="ln">44</span>    <span class="v">$order</span> = Order::<span class="f">find</span>(<span class="v">$id</span>);<span class="flag r">IDOR</span></div>
+        <div id="lineGood" hidden><span class="ln">44</span>    <span class="v">$order</span> = <span class="v">$pressing</span>-&gt;<span class="f">orders</span>()-&gt;<span class="f">findOrFail</span>(<span class="v">$id</span>);<span class="flag g">CORRIGÉ</span></div>
+        <div><span class="ln">45</span>    <span class="k">return new</span> <span class="f">OrderResource</span>(<span class="v">$order</span>);</div>
+        <div><span class="ln">46</span>}</div>
+        <div class="sweep"></div>
+      </div>
+      <p class="code-note" id="codeNote">Analyse du contrôleur en cours…</p>
+    </div>
+  </div>
+</section>
+
+<section id="audit" class="dark" style="background:var(--ink);color:var(--bg);border-radius:60px;margin:4vh 2vw 0" data-say="Sa grille d'audit. Rien ne m'échappe… enfin, rien ne LUI échappe.">
+  <span class="chap" style="background:var(--gold);color:var(--ink)">🔎 Ma grille d'audit</span>
+  <h2 class="section-title split">Dix points que je vérifie.</h2>
+  <p class="lead" style="color:rgba(255,243,220,.85)">Face à une application existante, je ne me contente pas de corriger le bug du jour : je passe le système au crible.</p>
+  <ul class="audit-grid">
+    <li><i>✓</i>Les API et leurs endpoints</li>
+    <li><i>✓</i>Les flux de données entre écrans et serveur</li>
+    <li><i>✓</i>Les contrôles d'accès et les permissions</li>
+    <li><i>✓</i>La propriété de chaque ressource (anti-IDOR)</li>
+    <li><i>✓</i>Les données des utilisateurs</li>
+    <li><i>✓</i>Les moyens de paiement et les redirections</li>
+    <li><i>✓</i>Les dépendances du projet</li>
+    <li><i>✓</i>Les incohérences entre front-end et back-end</li>
+    <li><i>✓</i>Les fonctionnalités inutilisées</li>
+    <li><i>✓</i>Les éléments manquants côté backend</li>
+  </ul>
+</section>
+
+<section id="cas" data-say="Deux histoires vraies, avec de vraies failles corrigées.">
+  <span class="chap">🧪 Sur le terrain</span>
+  <h2 class="section-title split">Deux cas réels.</h2>
+  <div class="cases" data-reveal>
+    <article style="background:var(--gold)"><h3>PressLink</h3><ul><li>Isolation des données : chaque pressing ne voit que ses clients et ses commandes.</li><li>Contrôles de propriété sur chaque commande.</li><li>Faille de type IDOR identifiée et corrigée.</li><li>Pressings suspendus bloqués, statuts invalides refusés.</li><li>Suppressions réversibles (soft delete) et historique des statuts.</li></ul></article>
+    <article style="background:var(--teal)"><h3>Bo Séjour</h3><ul><li>Renforcement de la sécurité à la suite d'un audit externe.</li><li>Mise en place de sauvegardes automatiques.</li><li>Paiement en ligne intégré et redirections vérifiées.</li><li>Espaces voyageur et partenaire séparés.</li></ul></article>
+  </div>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="projets.html"><small>← Chapitre 5</small><b>Les projets</b></a><a class="next" href="contact.html"><small>Fin →</small><b>Contact</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

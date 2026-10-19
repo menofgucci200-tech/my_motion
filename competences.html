@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les poids de l'or — compétences de Stéphane Say</title>
+<meta name="description" content="Compétences de Stéphane Say : Laravel, PHP, Livewire, Flutter, Dart, Next.js, TypeScript, MySQL, sécurité applicative, tests PHPUnit, Git, Figma, et sa méthode de travail.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Les poids de l'or — compétences de Stéphane Say">
+<meta property="og:description" content="Compétences de Stéphane Say : Laravel, PHP, Livewire, Flutter, Dart, Next.js, TypeScript, MySQL, sécurité applicative, tests PHPUnit, Git, Figma, et sa méthode de travail.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Bienvenue dans la salle du trésor !">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="matemasie" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Les poids de l'or</p>
+  <span class="chap">🪙 Chapitre 3 · Les poids de l'or</span>
+  <h1 class="split">Ce que je pèse, en outils.</h1>
+  <p class="lead">Mes technologies, mes pouvoirs et ma façon de travailler, du besoin client jusqu'à la maintenance.</p>
+</section>
+
+<section id="or" data-say="Ses poids en or ! Attrape-les, lance-les, secoue tout.">
+  <div class="pit-head">
+    <div>
+      <p class="lead">Chez les Akans, on pesait la poudre d'or avec de petits poids en laiton, chacun avec sa forme et son histoire. Voici les miens. Attrape-les !</p>
+    </div>
+    <button class="btn" id="shake"><span>Secouer ! 🌪️</span></button>
+  </div>
+  <div class="pit" id="pit" aria-label="Zone de jeu : mes outils en poids d'or"><p class="hint">Glisse et lance les poids avec la souris</p></div>
+
+  <div class="skills">
+    <article class="skill"><h3><i data-adk="ananse"></i>Backend</h3><div class="tags"><span>PHP</span><span>Laravel</span><span>Livewire</span><span>API REST</span><span>Laravel Sanctum</span></div></article>
+    <article class="skill"><h3><i data-adk="nyansapo"></i>Frontend</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>Next.js</span><span>Tailwind CSS</span></div></article>
+    <article class="skill"><h3><i data-adk="aya"></i>Mobile</h3><div class="tags"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>PWA</span><span>Firebase / FCM</span></div></article>
+    <article class="skill"><h3><i data-adk="matemasie"></i>Données</h3><div class="tags"><span>MySQL</span><span>MariaDB</span><span>Modélisation</span></div></article>
+    <article class="skill"><h3><i data-adk="eban"></i>Qualité &amp; sécurité</h3><div class="tags"><span>Sécurité applicative</span><span>Contrôle d'accès</span><span>Audit</span><span>Tests PHPUnit</span><span>Diagnostic de bugs</span></div></article>
+    <article class="skill"><h3><i data-adk="sankofa"></i>Outils</h3><div class="tags"><span>Git &amp; GitHub</span><span>Hostinger</span><span>Figma</span><span>Claude Code</span></div></article>
+  </div>
+  <div class="langs"><span><b>Français</b> · courant</span><span><b>Anglais</b> · notions</span><span>· Autonomie · Résolution de problèmes · Esprit d'analyse · Travail en équipe · Aisance à l'oral</span></div>
+</section>
+
+<section class="slot" id="pouvoirs" data-say="Ses pouvoirs… je suis un peu jaloux.">
+  <div class="slot-in">
+    <p class="tale" style="font-size:clamp(20px,2vw,28px);margin-bottom:18px">Chapitre 4 · Ses pouvoirs</p>
+    <div class="slot-line" aria-hidden="true"><span>Je</span><div class="window"><div class="reel" id="reel"><span>code.</span><span>conçois.</span><span>sécurise.</span><span>entreprends.</span><span>raconte.</span></div></div></div>
+    <p class="slot-desc" id="slotDesc" aria-hidden="true"></p>
+    <div class="slot-dots" id="slotDots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <ul class="slot-list" id="slotList"></ul>
+  </div>
+</section>
+
+<section id="methode" data-say="Sa méthode : d'abord comprendre, ensuite coder.">
+  <span class="chap">🧭 Ma méthode</span>
+  <h2 class="section-title split">Sept étapes, du besoin à la maintenance.</h2>
+  <div class="steps">
+    <div class="steps-line" aria-hidden="true"><i></i></div>
+    <div class="step"><div class="n" style="background:var(--gold);color:var(--ink)">1</div><h3>Comprendre</h3><p>Questionnaire de découverte, objectifs, utilisateurs, contraintes.</p></div>
+    <div class="step"><div class="n" style="background:var(--teal);color:var(--ink)">2</div><h3>Concevoir</h3><p>Parcours, maquettes Figma, back-office à prévoir.</p></div>
+    <div class="step"><div class="n" style="background:var(--sky);color:var(--ink)">3</div><h3>Développer</h3><p>API, interfaces web et mobiles, base de données.</p></div>
+    <div class="step"><div class="n" style="background:var(--pink);color:#fff">4</div><h3>Tester</h3><p>Tests PHPUnit, diagnostic de bugs, cas limites.</p></div>
+    <div class="step"><div class="n" style="background:var(--violet);color:#fff">5</div><h3>Auditer</h3><p>Contrôles d'accès, flux de données, dépendances.</p></div>
+    <div class="step"><div class="n" style="background:var(--orange);color:var(--ink)">6</div><h3>Déployer</h3><p>Mise en ligne, sauvegardes automatiques, versions.</p></div>
+    <div class="step"><div class="n" style="background:#fff;color:var(--ink)">7</div><h3>Maintenir</h3><p>Suivre, corriger, faire évoluer avec les utilisateurs.</p></div>
+  </div>
+  <div class="ia-card">
+    <div class="ico" data-adk="nyansapo" data-sw="6" aria-hidden="true"></div>
+    <div><h3>L'IA, mon copilote (pas mon pilote).</h3>
+      <p>J'utilise Claude Code comme un assistant d'ingénierie : analyse de projet, audit, documentation, recherche de bugs, tests, refactorisation, architecture. Le principe : aller plus vite sans jamais perdre la compréhension de ce que je livre.</p>
+      <div class="tags"><span>Analyse</span><span>Audit</span><span>Documentation</span><span>Tests</span><span>Refactorisation</span><span>Architecture</span></div></div>
+  </div>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="voyage.html"><small>← Chapitre 2</small><b>Le voyage</b></a><a class="next" href="projets.html"><small>Chapitre 5 →</small><b>Les projets</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

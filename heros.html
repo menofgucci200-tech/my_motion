@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le héros — Stéphane Say, développeur Full Stack & Mobile</title>
+<meta name="description" content="Qui est Stéphane Say ? Développeur Full Stack & Mobile de 20 ans à Abidjan, étudiant à l'UVCI, développeur chez LKM Digital, responsable informatique du REJCC, slameur et comédien.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Le héros — Stéphane Say, développeur Full Stack & Mobile">
+<meta property="og:description" content="Qui est Stéphane Say ? Développeur Full Stack & Mobile de 20 ans à Abidjan, étudiant à l'UVCI, développeur chez LKM Digital, responsable informatique du REJCC, slameur et comédien.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Voici le héros. Approche, il ne mord pas.">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="dwennimmen" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Le héros</p>
+  <span class="chap">📖 Chapitre 1 · Le héros</span>
+  <h1 class="split">Stéphane Say, le héros du conte.</h1>
+  <p class="lead">Vingt ans, Abidjan, étudiant en Licence 2 et déjà développeur en production. Voici qui se cache derrière le code.</p>
+</section>
+
+<section id="heros" data-say="Lui, c'est le héros du conte. 20 ans, Abidjan, curieux de tout.">
+  <div class="about">
+    <div class="board" id="board">
+      <div class="polaroid"><span class="tape" id="tape"></span><!-- Emplacement photo : remplacer ce bloc par <img src="assets/img/ta-photo.jpg" alt="Portrait de Stéphane Say"> -->
+        <div class="portrait-ph" aria-hidden="true"><div class="ph-web"></div><span>SS</span></div><b>Le héros, 2026</b></div>
+      <span class="sticker big" style="background:var(--pink);color:#fff;left:-2%;top:2%">20 ans<br>🎂</span>
+      <span class="sticker" style="background:var(--gold);right:2%;top:12%">Abidjan 🇨🇮</span>
+      <span class="sticker" style="background:var(--teal);left:0;top:62%">L2 DAS · UVCI 🎓</span>
+      <span class="sticker" style="background:var(--violet);color:#fff;right:-2%;top:48%">Dev @ LKM Digital 💼</span>
+      <span class="sticker big" style="background:var(--orange);right:10%;bottom:0">Slam &amp;<br>théâtre 🎭</span>
+      <span class="sticker" style="background:var(--sky);left:22%;bottom:2%">Scout ⚜️</span>
+    </div>
+    <div class="about-text">
+      <h2 class="h2 sm split">Un dev qui veut comprendre le « pourquoi ».</h2>
+      <p>Je ne voulais pas apprendre seulement pour un diplôme. Parti de quelques lignes de <b>HTML, CSS et PHP</b> en 2025, je conçois aujourd'hui des <b>applications web et mobiles complètes</b> chez LKM Digital : interface, API, base de données, sécurité, mise en production.</p>
+      <p>À côté, je crée mes propres produits, je pilote l'informatique d'un réseau de jeunes entrepreneurs, et je monte sur scène. Mon objectif : transformer tout ça en un profil clair de <b>développeur Full Stack &amp; Mobile orienté sécurité</b>.</p>
+    </div>
+  </div>
+  <div class="forces">
+    <article class="force"><div class="ic" style="background:var(--gold)">🛠️</div><h3>Orienté projet</h3><p>J'apprends en construisant : chaque notion devient une réalisation concrète.</p></article>
+    <article class="force"><div class="ic" style="background:var(--teal)">🔍</div><h3>Le « pourquoi » d'abord</h3><p>Je comprends la logique avant d'écrire le code, et j'analyse l'existant avant de le modifier.</p></article>
+    <article class="force"><div class="ic" style="background:var(--pink)">🔄</div><h3>Tout le cycle produit</h3><p>Du besoin client aux tests, au déploiement, à la maintenance et au modèle économique.</p></article>
+    <article class="force"><div class="ic" style="background:var(--violet)">🛡️</div><h3>Réflexe sécurité</h3><p>Contrôles d'accès, isolation des données, audit : la sécurité fait partie du développement.</p></article>
+    <article class="force"><div class="ic" style="background:var(--orange)">🚀</div><h3>Esprit entrepreneur</h3><p>PressLink : identifier un problème, concevoir la solution, la transformer en offre.</p></article>
+    <article class="force"><div class="ic" style="background:var(--sky)">🤝</div><h3>Prise de responsabilités</h3><p>Responsable informatique du REJCC, formateur de théâtre, scout : j'aime faire avancer un collectif.</p></article>
+  </div>
+</section>
+
+<section id="fiche" data-say="Sa fiche de personnage. Pas mal pour un débutant de 2025 !">
+  <span class="chap">🪪 Fiche de personnage</span>
+  <h2 class="section-title split">Le héros, en huit cases.</h2>
+  <div class="fiche" data-reveal>
+    <div><small>Nom</small><b>Stéphane Say</b></div>
+    <div><small>Âge</small><b>20 ans · né en 2006</b></div>
+    <div><small>Base</small><b>Abidjan, Côte d'Ivoire</b></div>
+    <div><small>Formation</small><b>Licence 2 DAS · UVCI</b></div>
+    <div><small>Poste</small><b>Développeur junior · LKM Digital</b></div>
+    <div><small>Rôle associatif</small><b>Responsable informatique · REJCC</b></div>
+    <div><small>Langues</small><b>Français courant · anglais notions</b></div>
+    <div><small>Cap</small><b>Full Stack &amp; Mobile + cybersécurité</b></div>
+  </div>
+</section>
+
+<section id="progression" data-say="Regarde comme il a grandi en un an !">
+  <span class="chap">📈 Ce que mon parcours raconte</span>
+  <h2 class="section-title split">Une histoire de montée en responsabilité.</h2>
+  <p class="lead">Si l'on enlève les noms de technologies et de projets, il reste une trajectoire : passer de la logique « cours, examen, diplôme » à celle de quelqu'un qui conçoit, sécurise, vend et fait avancer une équipe.</p>
+  <div class="chain">
+    <span style="background:#fff">Étudiant</span><em>→</em><span style="background:var(--gold)">Développeur</span><em>→</em><span style="background:var(--teal)">Contributeur pro</span><em>→</em><span style="background:var(--sky)">Concepteur</span><em>→</em><span style="background:var(--pink);color:#fff">Auditeur</span><em>→</em><span style="background:var(--orange)">Entrepreneur</span><em>→</em><span style="background:var(--violet);color:#fff">Responsable technique</span>
+  </div>
+</section>
+
+<section id="hors-ecran" data-say="Il slame aussi. Moi, je chante faux.">
+  <span class="chap">🎭 Chapitre 7 · Hors écran</span>
+  <h2 class="h2 sm split">Le code, c'est pas tout.</h2>
+  <div class="flips">
+    <div class="flip" tabindex="0" role="button" aria-label="Théâtre : retourner la carte"><div class="fi"><div class="f" style="background:var(--pink);color:#fff"><em>🎭</em><h3>Théâtre</h3></div><div class="bk">Responsable formateur de la troupe de la paroisse Saint-Mathieu. On y apprend à porter un message.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Slam : retourner la carte"><div class="fi"><div class="f" style="background:var(--gold)"><em>🎤</em><h3>Slam</h3></div><div class="bk">L'art oratoire et la musique des mots. Comme Anansi, je gagne par la parole.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Scoutisme : retourner la carte"><div class="fi"><div class="f" style="background:var(--teal)"><em>⚜️</em><h3>Scoutisme</h3></div><div class="bk">Groupe Yopougon Amérindiens : le collectif, l'entraide, les responsabilités.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Musique : retourner la carte"><div class="fi"><div class="f" style="background:var(--violet);color:#fff"><em>🎶</em><h3>Musique</h3></div><div class="bk">La musique et le rythme, qui nourrissent aussi l'écriture et la scène.</div></div></div>
+  </div>
+  <ul class="engage">
+    <li><span>🧑‍💻</span>Responsable informatique du Réseau Entrepreneurial des Jeunes Chrétiens Catholiques (REJCC).</li>
+    <li><span>🧠</span>Accompagnement d'étudiants en algorithmique.</li>
+    <li><span>📚</span>Création d'un programme de formation bureautique de 10 semaines.</li>
+    <li><span>🖥️</span>Reconditionnement de postes informatiques pour une bibliothèque de village.</li>
+  </ul>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="index.html"><small>← Il était une fois</small><b>Accueil</b></a><a class="next" href="voyage.html"><small>Chapitre 2 →</small><b>Le voyage</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

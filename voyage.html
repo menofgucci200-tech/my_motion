@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le voyage — parcours de Stéphane Say</title>
+<meta name="description" content="Le parcours de Stéphane Say, du Bac D en 2025 à développeur chez LKM Digital : UVCI, Bo Séjour, PressLink, REJCC, sécurité, IA, et les objectifs pour mai 2027.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Le voyage — parcours de Stéphane Say">
+<meta property="og:description" content="Le parcours de Stéphane Say, du Bac D en 2025 à développeur chez LKM Digital : UVCI, Bo Séjour, PressLink, REJCC, sécurité, IA, et les objectifs pour mai 2027.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Le chemin zigzague, mais il avance toujours.">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="nkyinkyim" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Le voyage</p>
+  <span class="chap">🧭 Chapitre 2 · Le voyage</span>
+  <h1 class="split">De zéro à la prod.</h1>
+  <p class="lead">Le chemin d'un étudiant qui ne voulait pas seulement apprendre pour un diplôme, mais construire et maintenir de vrais produits.</p>
+</section>
+
+<section id="voyage" data-say="Suis-moi sur le fil : voici son voyage, étape par étape.">
+  <div class="vhead">
+    <h2 class="h2 sm split">La frise.</h2>
+    <p class="lead">Un parcours qui monte en responsabilité : étudiant, développeur, auditeur, entrepreneur, responsable technique.</p>
+  </div>
+  <div class="vtrack" id="vtrack">
+    <svg class="vthread" id="vthread" aria-hidden="true"><path id="vpath"/><path id="vdone" class="done"/></svg>
+    <div class="walker" id="walker" aria-hidden="true"></div>
+    <div class="vline" aria-hidden="true"><i id="vline"></i></div>
+    <article class="vcard" style="--mb:4vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--ink)">2006</span><h3>Le héros naît</h3><p>Un jeune Ivoirien curieux, qui préfère comprendre et construire plutôt qu'apprendre par cœur.</p></article>
+    <article class="vcard" style="--mb:14vh"><span class="pin" style="background:var(--pink)"></span><span class="when" style="background:var(--pink)">Juillet 2025</span><h3>Bac D en poche</h3><p>Groupe Scolaire Louis Lagrange. Direction le numérique.</p></article>
+    <article class="vcard" style="--mb:2vh"><span class="pin" style="background:var(--teal)"></span><span class="when" style="background:var(--violet)">2025</span><h3>Entrée à l'UVCI</h3><p>Licence Développement d'applications et e-Services. Au compteur : HTML, CSS et quelques notions de PHP.</p></article>
+    <article class="vcard" style="--mb:12vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--orange)">Janvier 2026</span><h3>LKM Digital</h3><p>Développeur junior. Maintenir et faire évoluer des logiciels utilisés chaque jour par de vrais utilisateurs.</p></article>
+    <article class="vcard" style="--mb:3vh"><span class="pin" style="background:var(--teal)"></span><span class="when" style="background:var(--teal);color:var(--ink)">2026</span><h3>Bo Séjour</h3><p>Refonte complète d'une plateforme de réservation : paiement en ligne, WhatsApp, sécurité renforcée.</p></article>
+    <article class="vcard" style="--mb:13vh"><span class="pin" style="background:var(--pink)"></span><span class="when" style="background:var(--gold);color:var(--ink)">2026</span><h3>PressLink</h3><p>Mon premier produit, conçu et développé seul, de l'API au modèle commercial.</p></article>
+    <article class="vcard" style="--mb:4vh"><span class="pin" style="background:var(--violet)"></span><span class="when" style="background:var(--pink)">2026</span><h3>Responsable informatique</h3><p>REJCC : plateforme officielle, structuration de l'équipe, documentation, présentations au Bureau Exécutif.</p></article>
+    <article class="vcard" style="--mb:12vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--violet)">Septembre 2026</span><h3>Licence 2 DAS</h3><p>Deuxième année à l'UVCI, et ce portfolio pour raconter le chemin parcouru.</p></article>
+    <article class="vcard future" style="--mb:6vh"><span class="pin" style="background:var(--bg)"></span><span class="when" style="background:var(--gold);color:var(--ink)">Mai 2027</span><h3>Prochain chapitre</h3><p>Full Stack &amp; Mobile confirmé, spécialiste en cybersécurité, IA au cœur du travail.</p></article>
+  </div>
+</section>
+
+<section id="journal" data-say="Le journal complet. Prends ton temps, c'est un conte.">
+  <span class="chap">📜 Le journal du voyage</span>
+  <h2 class="section-title split">Sept étapes, racontées en détail.</h2>
+  <div class="journal">
+    <article><div class="ico" data-adk="sankofa" data-sw="7" aria-hidden="true"></div><div><p class="when">Les premières années</p><h3>Une personnalité curieuse et ambitieuse</h3><p>Très tôt, une conviction : ne pas apprendre seulement pour obtenir un diplôme, mais comprendre, construire, et transformer chaque connaissance en réalisation concrète.</p></div></article>
+    <article><div class="ico" data-adk="matemasie" data-sw="7" aria-hidden="true"></div><div><p class="when">Juillet 2025 → aujourd'hui</p><h3>Du Bac D à la Licence 2 DAS</h3><p>Baccalauréat série D au Groupe Scolaire Louis Lagrange, puis l'Université Virtuelle de Côte d'Ivoire en Développement d'applications et e-Services. Au départ : HTML, CSS et quelques notions de PHP. Il a fallu passer d'une logique scolaire à une logique professionnelle.</p></div></article>
+    <article><div class="ico" data-adk="ananse" data-sw="7" aria-hidden="true"></div><div><p class="when">2025 — 2026</p><h3>La découverte du vrai développement</h3><p>Une application ne se limite jamais à son interface. Petit à petit, toute la chaîne se dessine : frontend, backend, API, base de données, authentification, sécurité, infrastructure, déploiement, monitoring, maintenance.</p><blockquote>« Je veux apprendre le développement » est devenu « je veux construire et maintenir de vrais produits ».</blockquote></div></article>
+    <article><div class="ico" data-adk="eban" data-sw="7" aria-hidden="true"></div><div><p class="when">Janvier 2026</p><h3>LKM Digital : le logiciel réel</h3><p>Développeur junior, je maintiens et fais évoluer des solutions utilisées par de vrais utilisateurs. Bugs remontés du terrain, erreurs d'API, paiements, redirections, versions, déploiement, analyse de code existant : rien à voir avec les exercices. C'est là que naît ma démarche d'audit et ma refonte de Bo Séjour.</p></div></article>
+    <article><div class="ico" data-adk="aya" data-sw="7" aria-hidden="true"></div><div><p class="when">2026</p><h3>Entreprendre : PressLink</h3><p>Identifier un problème, concevoir une solution, la développer, la tester, puis la vendre. Sans structure pour intégrer certaines API de paiement, j'adapte le modèle plutôt que d'abandonner : vente directe, installation, formation et abonnement mensuel.</p></div></article>
+    <article><div class="ico" data-adk="nyansapo" data-sw="7" aria-hidden="true"></div><div><p class="when">2026</p><h3>Penser comme un chef de projet technique</h3><p>Mes questions ont changé. Avant : « quelle technologie utiliser ? ». Maintenant : que préparer avant de développer, comment comprendre le besoin du client, que prévoir côté back-office, comment auditer, tester, faire évoluer et commercialiser le produit ?</p><blockquote>Le développement n'est qu'une partie du cycle de vie d'un produit numérique.</blockquote></div></article>
+    <article><div class="ico" data-adk="dwennimmen" data-sw="7" aria-hidden="true"></div><div><p class="when">Aujourd'hui</p><h3>L'IA comme assistant d'ingénierie</h3><p>J'utilise l'IA, notamment Claude Code, pour analyser un projet, auditer, documenter, chercher des bugs, tester ou refactoriser. Mon objectif : travailler avec l'IA sans jamais abandonner la compréhension technique.</p></div></article>
+  </div>
+</section>
+
+<section id="suite" data-say="La suite du conte s'écrit maintenant. J'ai hâte !">
+  <span class="chap">🌱 Chapitre 8 · La suite</span>
+  <h2 class="h2 sm split">Les quêtes de mai 2026 à mai 2027.</h2>
+  <div class="quests">
+    <article class="quest" style="background:var(--gold)"><span class="tag">Quête 1</span><h3>Full Stack &amp; Mobile confirmé</h3><p>Maîtriser toute la chaîne : front, back, mobile, API, bases de données, serveurs et déploiement.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+    <article class="quest" style="background:var(--teal)"><span class="tag">Quête 2</span><h3>Spécialiste en cybersécurité</h3><p>Authentification, autorisation, protection des API, audits, vulnérabilités, protection des données.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+    <article class="quest" style="background:#d9cfff"><span class="tag">Quête 3</span><h3>L'IA au cœur du travail</h3><p>Analyse, audit, documentation, tests : travailler avec l'IA sans jamais perdre la compréhension technique.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+  </div>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="heros.html"><small>← Chapitre 1</small><b>Le héros</b></a><a class="next" href="competences.html"><small>Chapitre 3 →</small><b>Les poids de l'or</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

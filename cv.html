@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Stéphane Say, développeur Full Stack &amp; Mobile</title>
+<meta name="description" content="CV de Stéphane Say en une diapositive : développeur Full Stack &amp; Mobile à Abidjan, créateur de PressLink, responsable informatique du REJCC, développeur chez LKM Digital.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:title" content="CV — Stéphane Say">
+<meta property="og:image" content="assets/img/cv-preview.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff3dc; --bg-2:#ffe9c2; --ink:#2b2d6e; --ink-2:#4b4d8a;
+  --pink:#ff5c8a; --gold:#f4b400; --teal:#1fc8b9; --violet:#6c4cf5; --orange:#ff8a3d; --lilac:#d9cfff;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --sans:"DM Sans",system-ui,sans-serif; --tale:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#1d1f52;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+
+/* ---------- la diapositive 16:9 : toutes les tailles en cqw (1cqw = 1 % de la largeur) ---------- */
+.stage{width:min(100%, calc((100svh - 110px) * 16 / 9));}
+.slide{visibility:hidden;width:100%;aspect-ratio:16/9;container-type:inline-size;position:relative;overflow:hidden;background:var(--bg);border-radius:1.2cqw;box-shadow:0 2cqw 5cqw rgba(0,0,0,.35);display:grid;grid-template-columns:27% 73%}
+.slide *{will-change:auto}
+
+/* colonne de gauche */
+.side{background:var(--ink);color:var(--bg);padding:2cqw 2cqw 1.6cqw;display:flex;flex-direction:column;gap:.85cqw;position:relative;overflow:hidden}
+.side .sweb{position:absolute;right:-9cqw;top:-7cqw;width:26cqw;aspect-ratio:1;color:var(--gold);opacity:.13}
+.photo-wrap{position:relative;width:10.6cqw;aspect-ratio:1;align-self:center;margin-top:.9cqw}
+.photo{width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 .45cqw var(--gold),0 0 0 .8cqw var(--ink),0 0 0 1.05cqw var(--pink)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.photo.mono{display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#ffd76a,var(--gold) 55%,#d99a00)}
+.photo.mono span{font-family:var(--display);font-weight:800;font-size:4.2cqw;letter-spacing:-.06em;color:var(--ink)}
+.hang{position:absolute;right:-2.4cqw;top:-4cqw;width:4.6cqw}
+.hang .thr{position:absolute;left:50%;top:-6cqw;width:.14cqw;height:7cqw;background:var(--bg);opacity:.7}
+.hang svg{width:100%;display:block;overflow:visible}
+.legs path{fill:none;stroke:var(--bg);stroke-width:4.5;stroke-linecap:round}
+.who{text-align:center}
+.who h1{font-family:var(--display);font-weight:800;font-size:2.6cqw;letter-spacing:-.04em;line-height:.95}
+.who .role{font-weight:700;font-size:1.02cqw;color:var(--gold);margin-top:.5cqw}
+.who .loc{font-size:.9cqw;opacity:.8;margin-top:.25cqw}
+.contact{list-style:none;display:grid;gap:.3cqw;font-size:.8cqw}
+.contact li{display:flex;gap:.6cqw;align-items:center}
+.contact i{font-style:normal;width:1.4cqw;height:1.4cqw;border-radius:50%;background:rgba(255,243,220,.12);display:grid;place-items:center;font-size:.85cqw;flex-shrink:0}
+.contact a{border-bottom:.08cqw solid rgba(244,180,0,.6)}
+.side h2{font-family:var(--display);font-weight:800;font-size:1.05cqw;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.5cqw}
+.side h2::after{content:"";flex:1;height:.1cqw;background:rgba(244,180,0,.4)}
+.skillgrp{display:grid;gap:.3cqw}
+.skillgrp p{font-size:.8cqw;line-height:1.3}
+.skillgrp b{display:inline-block;min-width:5cqw;color:var(--bg);font-weight:700}
+.chips{display:inline}
+.chips span{display:inline-block;background:rgba(255,243,220,.12);border-radius:99px;padding:.08cqw .45cqw;margin:.06cqw .08cqw;font-size:.74cqw}
+.langs{font-size:.82cqw;line-height:1.5}
+.side .glyphs{margin-top:auto;display:flex;gap:.8cqw;justify-content:center;color:var(--gold);opacity:.75}
+.side .glyphs i{width:1.5cqw;height:1.5cqw}
+
+/* colonne principale */
+.main{padding:2.2cqw 2.6cqw 1.8cqw;display:flex;flex-direction:column;gap:1.25cqw;position:relative}
+.top{display:grid;grid-template-columns:1fr auto;gap:2cqw;align-items:end}
+.tale{font-family:var(--tale);font-style:italic;font-weight:600;color:var(--violet);font-size:1.35cqw}
+.profile{font-size:1cqw;line-height:1.5;margin-top:.4cqw;max-width:62cqw}
+.profile b{background:linear-gradient(transparent 60%,rgba(31,200,185,.45) 60%)}
+.dispo{display:inline-flex;align-items:center;gap:.5cqw;background:#fff;border-radius:99px;padding:.45cqw .9cqw;font-size:.78cqw;font-weight:700;box-shadow:0 0 0 .15cqw var(--ink),.3cqw .3cqw 0 var(--ink);white-space:nowrap}
+.dispo i{width:.6cqw;height:.6cqw;border-radius:50%;background:var(--teal)}
+.label{display:flex;align-items:center;gap:.7cqw;font-family:var(--display);font-weight:800;font-size:1.15cqw;letter-spacing:.03em;text-transform:uppercase}
+.label em{font-style:normal;background:var(--pink);color:#fff;border-radius:99px;padding:.2cqw .7cqw;font-size:.8cqw;letter-spacing:0;text-transform:none}
+.label::after{content:"";flex:1;height:.14cqw;background:var(--ink);opacity:.2}
+.featured{display:grid;grid-template-columns:1.12fr .88fr;gap:1.3cqw}
+.feat{border-radius:1.4cqw;padding:1.3cqw 1.5cqw;box-shadow:0 0 0 .18cqw var(--ink),.45cqw .45cqw 0 var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.feat .sym{position:absolute;right:1cqw;top:1cqw;width:3.6cqw;height:3.6cqw;opacity:.35}
+.feat small{font-weight:700;font-size:.72cqw;letter-spacing:.06em;text-transform:uppercase}
+.feat h3{font-family:var(--display);font-weight:800;font-size:2.6cqw;letter-spacing:-.05em;line-height:.95;margin:.35cqw 0 .25cqw}
+.feat .slogan{font-family:var(--tale);font-style:italic;font-weight:600;font-size:.95cqw}
+.feat ul{margin:.6cqw 0 .2cqw;padding-left:1.1cqw;display:grid;gap:.28cqw;font-size:.84cqw;line-height:1.35}
+.feat .foot{margin-top:auto;padding-top:.6cqw;display:flex;flex-wrap:wrap;gap:.4cqw;align-items:center;font-size:.74cqw}
+.feat .foot span{background:rgba(43,45,110,.1);border-radius:99px;padding:.15cqw .55cqw;font-weight:600}
+.feat .foot a{font-weight:700;border-bottom:.12cqw solid var(--ink)}
+.feat .foot .sep{flex:1;background:none;padding:0}
+.cols{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:1.3cqw;flex:1;min-height:0}
+.col{background:#fff;border-radius:1.2cqw;padding:1.05cqw 1.2cqw;box-shadow:0 0 0 .15cqw var(--ink)}
+.col h4{font-family:var(--display);font-weight:800;font-size:1cqw;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.45cqw;display:flex;gap:.4cqw;align-items:center}
+.col .item + .item{margin-top:.75cqw}
+.col .t{font-weight:700;font-size:.98cqw;display:flex;justify-content:space-between;gap:.6cqw}
+.col .t span{font-weight:600;color:var(--violet);font-size:.74cqw;white-space:nowrap}
+.col .s{font-size:.84cqw;color:var(--ink-2);font-style:italic}
+.col ul{padding-left:1cqw;margin-top:.3cqw;display:grid;gap:.26cqw;font-size:.86cqw;line-height:1.36}
+.col p{font-size:.86cqw;line-height:1.4}
+.ribbon{position:absolute;left:0;right:0;bottom:0;height:.55cqw;display:flex}
+.ribbon i{flex:1}
+
+/* ---------- barre de commande (comme un lecteur de présentation) ---------- */
+.bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.bar a,.bar button{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;background:rgba(255,243,220,.1);color:var(--bg);font-weight:600;font-size:14px;box-shadow:inset 0 0 0 2px rgba(255,243,220,.25);transition:background .25s,color .25s}
+.bar a:hover,.bar button:hover{background:var(--gold);color:var(--ink)}
+.bar .primary{background:var(--gold);color:var(--ink)}
+.hint{color:rgba(255,243,220,.55);font-size:12.5px}
+
+/* plein écran façon présentation */
+.stage:fullscreen{width:100vw;height:100vh;display:grid;place-items:center;background:#1d1f52}
+.stage:fullscreen .slide{width:min(100vw, calc(100vh * 16 / 9));border-radius:0}
+
+/* ---------- impression / PDF : une page 16:9, sans animation ---------- */
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  html,body{background:var(--bg);padding:0;display:block;min-height:0}
+  .bar,.hint,.no-print{display:none!important}
+  .stage{width:13.333in}
+  .slide{width:13.333in;height:7.5in;border-radius:0;box-shadow:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (max-width:700px){ .hint{display:none} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#fff3dc" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="60" cy="46" r="18" fill="#fff3dc"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#2b2d6e" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+</template>
+
+<div class="stage" id="stage">
+<article class="slide" id="slide" aria-label="CV de Stéphane Say">
+
+  <!-- =============== COLONNE GAUCHE =============== -->
+  <aside class="side">
+    <div class="sweb" id="sweb" aria-hidden="true"></div>
+    <div class="photo-wrap">
+      <!-- Emplacement photo : remplacer <span>SS</span> par <img src="assets/img/ta-photo.jpg" alt="Portrait de Stéphane Say"> -->
+      <div class="photo mono" aria-hidden="true"><span>SS</span></div>
+      <div class="hang" id="hang" aria-hidden="true"><div class="thr"></div></div>
+    </div>
+    <div class="who">
+      <h1 id="cvname">Stéphane Say</h1>
+      <p class="role">Développeur Full Stack &amp; Mobile · orienté sécurité</p>
+      <p class="loc">Abidjan, Côte d'Ivoire · 20 ans</p>
+    </div>
+    <ul class="contact">
+      <li><i>✉</i><a href="mailto:menofgucci200@gmail.com">menofgucci200@gmail.com</a></li>
+      <li><i>☏</i><a href="tel:+2250161133466">+225 01 61 13 34 66</a></li>
+      <li><i>⌥</i><a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">github.com/menofgucci200-tech</a></li>
+      <!-- À l'impression ce lien est masqué tant que le portfolio n'a pas d'adresse publique : remplacer href par l'URL complète puis retirer la classe no-print -->
+      <li class="no-print"><i>✦</i><a href="index.html">Portfolio animé : le conte d'Anansi</a></li>
+    </ul>
+    <h2>Compétences</h2>
+    <div class="skillgrp">
+      <p><b>Backend</b><span class="chips"><span>PHP</span><span>Laravel</span><span>Livewire</span><span>API REST</span><span>Sanctum</span></span></p>
+      <p><b>Frontend</b><span class="chips"><span>Next.js</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind</span><span>HTML/CSS</span></span></p>
+      <p><b>Mobile</b><span class="chips"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>PWA</span><span>FCM</span></span></p>
+      <p><b>Données</b><span class="chips"><span>MySQL</span><span>MariaDB</span></span></p>
+      <p><b>Sécurité</b><span class="chips"><span>Contrôle d'accès</span><span>Audit</span><span>PHPUnit</span><span>Diagnostic</span></span></p>
+      <p><b>Outils</b><span class="chips"><span>Git/GitHub</span><span>Hostinger</span><span>Figma</span><span>Claude Code</span></span></p>
+    </div>
+    <h2>Langues &amp; atouts</h2>
+    <p class="langs"><b>Français</b> courant · <b>Anglais</b> notions<br>Autonomie · Esprit d'analyse · Travail en équipe · Aisance à l'oral</p>
+    <div class="glyphs" aria-hidden="true"><i data-adk="ananse"></i><i data-adk="eban"></i><i data-adk="aya"></i><i data-adk="nkyinkyim"></i><i data-adk="sankofa"></i></div>
+  </aside>
+
+  <!-- =============== COLONNE PRINCIPALE =============== -->
+  <section class="main">
+    <div class="top">
+      <div>
+        <p class="tale">Il était une fois, à Abidjan…</p>
+        <p class="profile">Développeur junior chez <b>LKM Digital</b>, je conçois et fais évoluer des applications web et mobiles complètes, du back-office à l'interface. J'ai créé <b>PressLink</b> seul, de l'API au modèle commercial, et je pilote l'informatique du <b>REJCC</b>. Réflexe sécurité, IA comme outil de productivité.</p>
+      </div>
+      <p class="dispo"><i></i>Ouvert aux stages, missions et collaborations</p>
+    </div>
+
+    <p class="label">Projets personnels <em>★ en vedette</em></p>
+    <div class="featured">
+      <div class="feat" style="background:var(--gold)">
+        <div class="sym" data-adk="aya" aria-hidden="true"></div>
+        <small>Produit personnel · 2026 · conçu et développé seul</small>
+        <h3>PressLink</h3>
+        <p class="slogan">« Le lien entre votre pressing et vos clients. »</p>
+        <ul>
+          <li>API Laravel (Sanctum), tableau de bord Livewire pour les pressings, application client installable (PWA, Flutter).</li>
+          <li>Suivi des commandes en temps réel (PL-XXXXXX) et notification du client quand ses vêtements sont prêts.</li>
+          <li>4 rôles, données isolées par pressing, contrôles de propriété, faille IDOR corrigée.</li>
+          <li>Modèle commercial : 3 offres (installation + abonnement), formation et support inclus.</li>
+        </ul>
+        <div class="foot"><span>Laravel</span><span>Livewire</span><span>Flutter</span><span>MySQL</span><span class="sep"></span><a href="https://presslink.org/" target="_blank" rel="noopener">presslink.org</a><a href="https://github.com/menofgucci200-tech/PressLink" target="_blank" rel="noopener">code source</a></div>
+      </div>
+      <div class="feat" style="background:var(--lilac)">
+        <div class="sym" data-adk="akoma" aria-hidden="true"></div>
+        <small>Plateforme associative · responsable informatique</small>
+        <h3>REJCC</h3>
+        <p class="slogan">Réseau Entrepreneurial des Jeunes Chrétiens Catholiques</p>
+        <ul>
+          <li>Plateforme officielle : adhésion en ligne, espace membre, carte de membre avec QR code.</li>
+          <li>Événements, mentorat, opportunités et back-office d'administration complet.</li>
+          <li>Mise en ligne sur Hostinger, structuration de l'équipe informatique, documentation.</li>
+        </ul>
+        <div class="foot"><span>Laravel</span><span>Livewire</span><span>Tailwind</span><span>MySQL</span><span class="sep"></span><a href="https://rejcc.site/" target="_blank" rel="noopener">rejcc.site</a><a href="https://github.com/menofgucci200-tech/rejcc" target="_blank" rel="noopener">code source</a></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <h4>💼 Expérience</h4>
+        <div class="item">
+          <p class="t">Développeur junior · LKM Digital <span>Janv. 2026 → auj.</span></p>
+          <p class="s">Bo Séjour · plateforme de réservation d'hébergements · <a href="https://bosejour.ci/" target="_blank" rel="noopener">bosejour.ci</a></p>
+          <ul>
+            <li>Refonte globale : design, parcours de réservation, espaces voyageur et partenaire, tableaux de bord.</li>
+            <li>Paiement en ligne et notifications WhatsApp aux voyageurs.</li>
+            <li>Sécurité renforcée après un audit externe, sauvegardes automatiques.</li>
+          </ul>
+          <p class="s" style="margin-top:.3cqw">Next.js · TypeScript · Laravel · MySQL</p>
+        </div>
+      </div>
+      <div class="col">
+        <h4>🎓 Formation</h4>
+        <div class="item"><p class="t">Licence Dév. d'applications et e-Services <span>2025 → auj.</span></p><p class="s">Université Virtuelle de Côte d'Ivoire · en L2</p></div>
+        <div class="item"><p class="t">Baccalauréat série D <span>2025</span></p><p class="s">Groupe Scolaire Louis Lagrange</p></div>
+        <div class="item"><p class="t">Cap mai 2027</p><p class="s">Full Stack &amp; Mobile confirmé, cybersécurité, IA</p></div>
+      </div>
+      <div class="col">
+        <h4>🎭 Engagements</h4>
+        <ul>
+          <li>Responsable informatique du REJCC.</li>
+          <li>Formateur, troupe de théâtre de la paroisse Saint-Mathieu.</li>
+          <li>Scout, groupe Yopougon Amérindiens.</li>
+          <li>Accompagnement en algorithmique ; formation bureautique de 10 semaines.</li>
+          <li>Reconditionnement de postes pour une bibliothèque de village.</li>
+        </ul>
+        <p style="margin-top:.4cqw"><b>Intérêts :</b> cybersécurité, IA, slam, musique.</p>
+      </div>
+    </div>
+    <div class="ribbon" aria-hidden="true"><i style="background:var(--gold)"></i><i style="background:var(--pink)"></i><i style="background:var(--teal)"></i><i style="background:var(--violet)"></i><i style="background:var(--orange)"></i></div>
+  </section>
+</article>
+</div>
+
+<div class="bar" role="toolbar" aria-label="Actions du CV">
+  <a href="index.html">← Portfolio</a>
+  <button id="replay">↻ Rejouer</button>
+  <button id="full">⛶ Plein écran</button>
+  <a class="primary" href="assets/docs/CV-Stephane-Say-2026.pdf" download>⬇ Télécharger le PDF</a>
+  <button id="print">🖨 Imprimer</button>
+</div>
+<p class="hint">Astuce : touche F pour le plein écran, R pour rejouer l'animation.</p>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+/* CV animé : même univers que le portfolio, en une seule diapositive */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const PAL = ['#ff5c8a','#f4b400','#1fc8b9','#6c4cf5','#ff8a3d'];
+$('#sweb').innerHTML = PG.adinkra('ananse',null,1.2);
+$$('[data-adk]').forEach(i=>{ i.innerHTML = PG.adinkra(i.dataset.adk,null,8); });
+const sp = $('#spiderTpl').content.firstElementChild.cloneNode(true); $('#hang').appendChild(sp);
+if (!PG.reduce) sp.querySelectorAll('.legs path').forEach((p,i)=>gsap.to(p,{rotate:i%2?8:-8,transformOrigin:i<4?'100% 0%':'0% 0%',duration:.3,repeat:-1,yoyo:true,ease:'sine.inOut'}));
+const nameChars = PG.splitChars($('#cvname'));
+
+function build(){
+  return gsap.timeline({paused:true})
+    .from('#slide',{scale:.92,rotate:-1.5,opacity:0,duration:.8,ease:'back.out(1.6)'})
+    .from('.side',{xPercent:-100,duration:.8,ease:'power4.out'},'-=.4')
+    .add(PG.drawSVG($('#sweb svg'),{duration:1.6,stagger:.02}),'-=.5')
+    .from('.photo',{scale:0,rotate:-90,duration:.9,ease:'elastic.out(1,.6)'},'<')
+    .from('#hang',{yPercent:-320,duration:1,ease:'bounce.out'},'-=.6')
+    .from(nameChars,{yPercent:110,rotate:()=>PG.rand(-30,30),opacity:0,stagger:.03,duration:.8,ease:'elastic.out(1,.5)'},'-=.8')
+    .from('.who p, .contact li',{x:-30,opacity:0,stagger:.05,duration:.5,ease:'back.out(2)'},'-=.6')
+    .from('.side h2, .skillgrp p, .langs, .side .glyphs i',{x:-30,opacity:0,stagger:.04,duration:.45,ease:'back.out(2)'},'-=.4')
+    .from('.top > *',{y:30,opacity:0,stagger:.1,duration:.6,ease:'back.out(2)'},1)
+    .from('.label',{scaleX:0,transformOrigin:'left',duration:.5,ease:'power3.out'},1.3)
+    .from('.feat',{y:120,rotate:i=>i?6:-6,opacity:0,stagger:.15,duration:1,ease:'elastic.out(1,.7)'},1.4)
+    .from('.feat .sym',{scale:0,rotate:-180,stagger:.15,duration:.8,ease:'back.out(2)'},1.9)
+    .from('.feat li',{x:20,opacity:0,stagger:.05,duration:.4},2)
+    .from('.col',{y:80,opacity:0,stagger:.12,duration:.8,ease:'back.out(1.8)'},2.1)
+    .from('.ribbon i',{scaleY:0,transformOrigin:'bottom',stagger:.06,duration:.4,ease:'back.out(3)'},2.6);
+}
+let tl = null;
+/* revert() remet tout à l'état d'origine avant de reconstruire l'animation */
+function play(){ if (tl) tl.revert(); $('#slide').style.visibility = 'visible'; tl = build(); PG.reduce ? tl.progress(1) : tl.play(); }
+document.fonts.ready.then(play);
+$('#replay').addEventListener('click',play);
+/* plein écran façon présentation */
+const full = ()=>{ document.fullscreenElement ? document.exitFullscreen() : $('#stage').requestFullscreen && $('#stage').requestFullscreen(); };
+$('#full').addEventListener('click',full);
+addEventListener('keydown',e=>{ if (e.key === 'f' || e.key === 'F') full(); if (e.key === 'r' || e.key === 'R') play(); });
+/* impression : on affiche l'état final, sans animation */
+addEventListener('beforeprint',()=>tl && tl.progress(1));
+$('#print').addEventListener('click',()=>{ tl && tl.progress(1); print(); });
+/* les cartes se soulèvent au survol */
+$$('.feat, .col').forEach(c=>{
+  c.addEventListener('mouseenter',()=>gsap.to(c,{y:-6,rotate:-.6,duration:.4,ease:'back.out(3)'}));
+  c.addEventListener('mouseleave',()=>gsap.to(c,{y:0,rotate:0,duration:.6,ease:'elastic.out(1,.4)'}));
+});
+</script>
+</body>
+</html>

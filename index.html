@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stéphane Say — Développeur Full Stack &amp; Mobile à Abidjan</title>
+<meta name="description" content="Stéphane Say, développeur Full Stack &amp; Mobile à Abidjan (Laravel, Flutter, Next.js), orienté sécurité. Découvre son histoire, contée par Anansi l'araignée : PressLink, Bo Séjour, REJCC.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Stéphane Say — Développeur Full Stack & Mobile">
+<meta property="og:description" content="Il était une fois, à Abidjan, un développeur qui tisse des applications comme Anansi tisse sa toile.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>#night,.mascot,.pg-cursor{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Stéphane Say","jobTitle":"Développeur Full Stack & Mobile","worksFor":{"@type":"Organization","name":"LKM Digital"},"address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"},"email":"mailto:menofgucci200@gmail.com","alumniOf":"Université Virtuelle de Côte d'Ivoire","sameAs":["https://github.com/menofgucci200-tech"],"knowsAbout":["Laravel","PHP","Flutter","Next.js","MySQL","Sécurité applicative"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div id="night" aria-hidden="true">
+  <div class="bigweb" id="bigweb"></div>
+  <div class="ithread" id="ithread"></div>
+  <div class="ispider" id="ispider"></div>
+  <p class="once tale" id="once">Il était une fois…</p>
+  <button class="skip-intro" id="skipIntro" tabindex="-1">Passer l'intro →</button>
+</div>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi. Je te raconte l'histoire de Stéphane ?</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" data-say="Psst ! Moi c'est Anansi. Je te raconte l'histoire de Stéphane ?">
+  <div class="blobs" id="blobs"></div>
+  <div class="corner-web" id="cw1" style="left:-8vw;bottom:-10vw" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="dispo"><i></i>Ouvert aux stages, missions freelance et collaborations</p>
+    <p class="once-upon tale">Il était une fois, à Abidjan…</p>
+    <h1 class="name" id="name">Stéphane</h1>
+    <p class="tagline">un développeur <mark>Full Stack &amp; Mobile</mark> qui tisse des applications comme Anansi tisse sa toile : solides, utiles et sûres.</p>
+    <div class="hero-row">
+      <a class="btn" href="#toile"><span>Voir mes projets →</span></a>
+      <a class="btn ghost" href="cv.html"><span>Mon CV en une page →</span></a>
+    </div>
+  </div>
+  <div class="scroll-ball" aria-hidden="true">scrolle<br>doucement ↓</div>
+</section>
+
+<!-- ================= CHAPITRE 1 : LE HÉROS ================= -->
+<section id="heros" data-say="Lui, c'est le héros du conte. 20 ans, Abidjan, curieux de tout.">
+  <div class="about">
+    <div class="board" id="board">
+      <div class="polaroid"><span class="tape" id="tape"></span><!-- Emplacement photo : remplacer ce bloc par <img src="assets/img/ta-photo.jpg" alt="Portrait de Stéphane Say"> -->
+        <div class="portrait-ph" aria-hidden="true"><div class="ph-web"></div><span>SS</span></div><b>Le héros, 2026</b></div>
+      <span class="sticker big" style="background:var(--pink);color:#fff;left:-2%;top:2%">20 ans<br>🎂</span>
+      <span class="sticker" style="background:var(--gold);right:2%;top:12%">Abidjan 🇨🇮</span>
+      <span class="sticker" style="background:var(--teal);left:0;top:62%">L2 DAS · UVCI 🎓</span>
+      <span class="sticker" style="background:var(--violet);color:#fff;right:-2%;top:48%">Dev @ LKM Digital 💼</span>
+      <span class="sticker big" style="background:var(--orange);right:10%;bottom:0">Slam &amp;<br>théâtre 🎭</span>
+      <span class="sticker" style="background:var(--sky);left:22%;bottom:2%">Scout ⚜️</span>
+    </div>
+    <div class="about-text">
+      <span class="chap">📖 Chapitre 1 · Le héros</span>
+      <h2 class="h2 sm split">Un dev qui veut comprendre le « pourquoi ».</h2>
+      <p>Je ne voulais pas apprendre seulement pour un diplôme. Parti de quelques lignes de <b>HTML, CSS et PHP</b> en 2025, je conçois aujourd'hui des <b>applications web et mobiles complètes</b> chez LKM Digital : interface, API, base de données, sécurité, mise en production.</p>
+      <p>À côté, je crée mes propres produits, je pilote l'informatique d'un réseau de jeunes entrepreneurs, et je monte sur scène. Mon objectif : transformer tout ça en un profil clair de <b>développeur Full Stack &amp; Mobile orienté sécurité</b>.</p>
+    </div>
+  </div>
+  <div class="forces">
+    <article class="force"><div class="ic" style="background:var(--gold)">🛠️</div><h3>Orienté projet</h3><p>J'apprends en construisant : chaque notion devient une réalisation concrète.</p></article>
+    <article class="force"><div class="ic" style="background:var(--teal)">🔍</div><h3>Le « pourquoi » d'abord</h3><p>Je comprends la logique avant d'écrire le code, et j'analyse l'existant avant de le modifier.</p></article>
+    <article class="force"><div class="ic" style="background:var(--pink)">🔄</div><h3>Tout le cycle produit</h3><p>Du besoin client aux tests, au déploiement, à la maintenance et au modèle économique.</p></article>
+    <article class="force"><div class="ic" style="background:var(--violet)">🛡️</div><h3>Réflexe sécurité</h3><p>Contrôles d'accès, isolation des données, audit : la sécurité fait partie du développement.</p></article>
+    <article class="force"><div class="ic" style="background:var(--orange)">🚀</div><h3>Esprit entrepreneur</h3><p>PressLink : identifier un problème, concevoir la solution, la transformer en offre.</p></article>
+    <article class="force"><div class="ic" style="background:var(--sky)">🤝</div><h3>Prise de responsabilités</h3><p>Responsable informatique du REJCC, formateur de théâtre, scout : j'aime faire avancer un collectif.</p></article>
+  </div>
+  <a class="more" href="heros.html">Lire le chapitre complet : le héros →</a>
+</section>
+
+<!-- ================= CHAPITRE 2 : LE VOYAGE ================= -->
+<section id="voyage" data-say="Suis-moi sur le fil : voici son voyage, étape par étape.">
+  <div class="vhead">
+    <span class="chap">🧭 Chapitre 2 · Le voyage</span>
+    <h2 class="h2 sm split">De zéro à la prod.</h2>
+    <a class="more" href="voyage.html" style="margin:0 0 18px">Le journal complet du voyage →</a>
+    <p class="lead">Un parcours qui monte en responsabilité : étudiant, développeur, auditeur, entrepreneur, responsable technique.</p>
+  </div>
+  <div class="vtrack" id="vtrack">
+    <svg class="vthread" id="vthread" aria-hidden="true"><path id="vpath"/><path id="vdone" class="done"/></svg>
+    <div class="walker" id="walker" aria-hidden="true"></div>
+    <div class="vline" aria-hidden="true"><i id="vline"></i></div>
+    <article class="vcard" style="--mb:4vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--ink)">2006</span><h3>Le héros naît</h3><p>Un jeune Ivoirien curieux, qui préfère comprendre et construire plutôt qu'apprendre par cœur.</p></article>
+    <article class="vcard" style="--mb:14vh"><span class="pin" style="background:var(--pink)"></span><span class="when" style="background:var(--pink)">Juillet 2025</span><h3>Bac D en poche</h3><p>Groupe Scolaire Louis Lagrange. Direction le numérique.</p></article>
+    <article class="vcard" style="--mb:2vh"><span class="pin" style="background:var(--teal)"></span><span class="when" style="background:var(--violet)">2025</span><h3>Entrée à l'UVCI</h3><p>Licence Développement d'applications et e-Services. Au compteur : HTML, CSS et quelques notions de PHP.</p></article>
+    <article class="vcard" style="--mb:12vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--orange)">Janvier 2026</span><h3>LKM Digital</h3><p>Développeur junior. Maintenir et faire évoluer des logiciels utilisés chaque jour par de vrais utilisateurs.</p></article>
+    <article class="vcard" style="--mb:3vh"><span class="pin" style="background:var(--teal)"></span><span class="when" style="background:var(--teal);color:var(--ink)">2026</span><h3>Bo Séjour</h3><p>Refonte complète d'une plateforme de réservation : paiement en ligne, WhatsApp, sécurité renforcée.</p></article>
+    <article class="vcard" style="--mb:13vh"><span class="pin" style="background:var(--pink)"></span><span class="when" style="background:var(--gold);color:var(--ink)">2026</span><h3>PressLink</h3><p>Mon premier produit, conçu et développé seul, de l'API au modèle commercial.</p></article>
+    <article class="vcard" style="--mb:4vh"><span class="pin" style="background:var(--violet)"></span><span class="when" style="background:var(--pink)">2026</span><h3>Responsable informatique</h3><p>REJCC : plateforme officielle, structuration de l'équipe, documentation, présentations au Bureau Exécutif.</p></article>
+    <article class="vcard" style="--mb:12vh"><span class="pin" style="background:var(--gold)"></span><span class="when" style="background:var(--violet)">Septembre 2026</span><h3>Licence 2 DAS</h3><p>Deuxième année à l'UVCI, et ce portfolio pour raconter le chemin parcouru.</p></article>
+    <article class="vcard future" style="--mb:6vh"><span class="pin" style="background:var(--bg)"></span><span class="when" style="background:var(--gold);color:var(--ink)">Mai 2027</span><h3>Prochain chapitre</h3><p>Full Stack &amp; Mobile confirmé, spécialiste en cybersécurité, IA au cœur du travail.</p></article>
+  </div>
+</section>
+
+<!-- ================= CHAPITRE 3 : LES POIDS DE L'OR ================= -->
+<section id="or" data-say="Ses poids en or ! Attrape-les, lance-les, secoue tout.">
+  <div class="pit-head">
+    <div>
+      <span class="chap">🪙 Chapitre 3 · Les poids de l'or</span>
+      <h2 class="h2 sm split">Ce que je pèse, en outils.</h2>
+      <p class="lead">Chez les Akans, on pesait la poudre d'or avec de petits poids en laiton, chacun avec sa forme et son histoire. Voici les miens. Attrape-les !</p>
+    </div>
+    <button class="btn" id="shake"><span>Secouer ! 🌪️</span></button>
+  </div>
+  <div class="pit" id="pit" aria-label="Zone de jeu : mes outils en poids d'or"><p class="hint">Glisse et lance les poids avec la souris</p></div>
+
+  <div class="skills">
+    <article class="skill"><h3><i data-adk="ananse"></i>Backend</h3><div class="tags"><span>PHP</span><span>Laravel</span><span>Livewire</span><span>API REST</span><span>Laravel Sanctum</span></div></article>
+    <article class="skill"><h3><i data-adk="nyansapo"></i>Frontend</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>Next.js</span><span>Tailwind CSS</span></div></article>
+    <article class="skill"><h3><i data-adk="aya"></i>Mobile</h3><div class="tags"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>PWA</span><span>Firebase / FCM</span></div></article>
+    <article class="skill"><h3><i data-adk="matemasie"></i>Données</h3><div class="tags"><span>MySQL</span><span>MariaDB</span><span>Modélisation</span></div></article>
+    <article class="skill"><h3><i data-adk="eban"></i>Qualité &amp; sécurité</h3><div class="tags"><span>Sécurité applicative</span><span>Contrôle d'accès</span><span>Audit</span><span>Tests PHPUnit</span><span>Diagnostic de bugs</span></div></article>
+    <article class="skill"><h3><i data-adk="sankofa"></i>Outils</h3><div class="tags"><span>Git &amp; GitHub</span><span>Hostinger</span><span>Figma</span><span>Claude Code</span></div></article>
+  </div>
+  <div class="langs"><span><b>Français</b> · courant</span><span><b>Anglais</b> · notions</span><span>· Autonomie · Résolution de problèmes · Esprit d'analyse · Travail en équipe · Aisance à l'oral</span></div>
+  <a class="more" href="competences.html">Toutes mes compétences et ma méthode →</a>
+</section>
+
+<!-- ================= CHAPITRE 4 : LES POUVOIRS ================= -->
+<section class="slot" id="pouvoirs" data-say="Ses pouvoirs… je suis un peu jaloux.">
+  <div class="slot-in">
+    <p class="tale" style="font-size:clamp(20px,2vw,28px);margin-bottom:18px">Chapitre 4 · Ses pouvoirs</p>
+    <div class="slot-line" aria-hidden="true"><span>Je</span><div class="window"><div class="reel" id="reel"><span>code.</span><span>conçois.</span><span>sécurise.</span><span>entreprends.</span><span>raconte.</span></div></div></div>
+    <p class="slot-desc" id="slotDesc" aria-hidden="true"></p>
+    <div class="slot-dots" id="slotDots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <ul class="slot-list" id="slotList"></ul>
+  </div>
+</section>
+
+<!-- ================= CHAPITRE 5 : LA TOILE ================= -->
+<section id="toile" data-say="Ma toile préférée : ses projets. Touche un nœud !">
+  <div>
+    <span class="chap">🕸️ Chapitre 5 · La toile</span>
+    <h2 class="h2 sm split">Trois projets pris dans la toile.</h2>
+    <a class="more" href="projets.html" style="margin:18px 0 0">Les trois histoires en détail →</a>
+    <div class="webwrap" id="webwrap"><svg id="websvg" aria-hidden="true"><path id="webpath"/></svg><div class="webhub" id="webhub" aria-hidden="true"></div></div>
+  </div>
+  <div class="pstage" id="pstage" aria-live="polite">
+    <article class="pcard on" style="background:var(--gold)" id="p-presslink">
+      <div><small>Produit personnel · 2026</small><h3>PressLink</h3><p>« Le lien entre votre pressing et vos clients. » Suivi des commandes en temps réel et notification du client quand ses vêtements sont prêts.</p>
+        <div class="tags"><span>Laravel</span><span>Livewire</span><span>Flutter</span><span>MySQL</span><span>PWA</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#presslink"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://presslink.org/" target="_blank" rel="noopener"><span>presslink.org ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/PressLink" target="_blank" rel="noopener"><span>Code source ↗</span></a></div></div>
+      <div class="scene" style="background:var(--pink)" aria-hidden="true">
+        <div class="machine"><div class="panel"><i></i><i></i><em>PL-4K7Q2M</em></div><div class="door"><div class="drum"><b style="background:var(--gold);left:8%;top:12%"></b><b style="background:var(--violet);right:6%;top:30%"></b><b style="background:var(--teal);left:22%;bottom:8%"></b></div></div></div>
+        <span class="ticket">Prête ✓</span>
+      </div>
+    </article>
+    <article class="pcard" style="background:var(--teal)" id="p-bosejour">
+      <div><small>Projet client · LKM Digital</small><h3>Bo Séjour</h3><p>Plateforme de réservation d'hébergements : refonte complète, espaces voyageur et partenaire, paiement en ligne, notifications WhatsApp.</p>
+        <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>MySQL</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#bosejour"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://bosejour.ci/" target="_blank" rel="noopener"><span>bosejour.ci ↗</span></a></div></div>
+      <div class="scene" aria-hidden="true"><div class="sky"></div><div class="sun"></div>
+        <div class="house"><div class="roof"></div><div class="walls"><span class="win" style="left:12%"></span><span class="win" style="right:12%"></span><span class="doorh"></span></div></div>
+        <div class="ground"></div><div class="cal" id="cal"></div><span class="paid">Payé ✓</span>
+      </div>
+    </article>
+    <article class="pcard" style="background:#d9cfff" id="p-rejcc">
+      <div><small>Responsable informatique · 2026</small><h3>REJCC</h3><p>Plateforme officielle du Réseau Entrepreneurial des Jeunes Chrétiens Catholiques : adhésion en ligne, carte membre QR, événements, mentorat.</p>
+        <div class="tags"><span>Laravel</span><span>Livewire</span><span>Tailwind CSS</span><span>MySQL</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#rejcc"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://rejcc.site/" target="_blank" rel="noopener"><span>rejcc.site ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/rejcc" target="_blank" rel="noopener"><span>Code source ↗</span></a></div></div>
+      <div class="scene cardwrap" style="background:var(--violet)" aria-hidden="true">
+        <div class="mcard" id="mcard"><div class="mface"><small>REJCC · Membre</small><b>Stéphane Say</b><small>Responsable informatique</small></div><div class="mface back"><div class="qr" id="qr"></div><div><b>Scanne-moi</b><br><small>Carte membre</small></div></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= CHAPITRE 6 : LE BOUCLIER ================= -->
+<section id="bouclier" class="dark" data-say="Chut… il traque les failles. Regarde le code.">
+  <span class="chap">🛡️ Chapitre 6 · Le bouclier</span>
+  <h2 class="h2 sm split">Développer, tester, auditer, sécuriser.</h2>
+  <div class="shield-grid">
+    <div>
+      <div class="eban-wrap"><div class="eban" id="eban" aria-hidden="true"></div><p><b>Eban, la clôture</b>Symbole adinkra de la sécurité et de la protection. Je ne me demande plus seulement « comment créer cette fonctionnalité ? », mais aussi « est-elle bien conçue, sécurisée et maintenable ? »</p></div>
+      <div class="method" id="method"><span style="background:var(--gold)">Développer</span><em>→</em><span style="background:var(--teal)">Tester</span><em>→</em><span style="background:var(--pink)">Auditer</span><em>→</em><span style="background:var(--sky)">Sécuriser</span></div>
+      <ul class="shield-list">
+        <li>Isolation des données : chaque pressing ne voit que ses propres clients et commandes.</li>
+        <li>Contrôles de propriété et d'autorisation sur chaque ressource de l'API.</li>
+        <li>Faille de type IDOR identifiée et corrigée sur PressLink.</li>
+        <li>Bo Séjour : sécurité renforcée après un audit externe, sauvegardes automatiques.</li>
+        <li>Revue des endpoints, des flux de données, des redirections de paiement et des dépendances.</li>
+      </ul>
+    </div>
+    <div class="codecard" id="codecard" aria-label="Exemple de correction d'une faille IDOR">
+      <div class="top"><i></i><i></i><i></i><span>OrderController.php · PressLink</span></div>
+      <div class="code">
+        <div><span class="ln">41</span><span class="k">public function</span> <span class="f">show</span>(<span class="v">$id</span>)</div>
+        <div><span class="ln">42</span>{</div>
+        <div><span class="ln">43</span>    <span class="c">// récupère la commande demandée</span></div>
+        <div id="lineBad"><span class="ln">44</span>    <span class="v">$order</span> = Order::<span class="f">find</span>(<span class="v">$id</span>);<span class="flag r">IDOR</span></div>
+        <div id="lineGood" hidden><span class="ln">44</span>    <span class="v">$order</span> = <span class="v">$pressing</span>-&gt;<span class="f">orders</span>()-&gt;<span class="f">findOrFail</span>(<span class="v">$id</span>);<span class="flag g">CORRIGÉ</span></div>
+        <div><span class="ln">45</span>    <span class="k">return new</span> <span class="f">OrderResource</span>(<span class="v">$order</span>);</div>
+        <div><span class="ln">46</span>}</div>
+        <div class="sweep"></div>
+      </div>
+      <p class="code-note" id="codeNote">Analyse du contrôleur en cours…</p>
+    </div>
+  </div>
+  <a class="more" href="securite.html">Ma grille d'audit sécurité →</a>
+</section>
+
+<!-- ================= CHAPITRE 7 : HORS ÉCRAN ================= -->
+<section id="hors-ecran" data-say="Il slame aussi. Moi, je chante faux.">
+  <span class="chap">🎭 Chapitre 7 · Hors écran</span>
+  <h2 class="h2 sm split">Le code, c'est pas tout.</h2>
+  <div class="flips">
+    <div class="flip" tabindex="0" role="button" aria-label="Théâtre : retourner la carte"><div class="fi"><div class="f" style="background:var(--pink);color:#fff"><em>🎭</em><h3>Théâtre</h3></div><div class="bk">Responsable formateur de la troupe de la paroisse Saint-Mathieu. On y apprend à porter un message.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Slam : retourner la carte"><div class="fi"><div class="f" style="background:var(--gold)"><em>🎤</em><h3>Slam</h3></div><div class="bk">L'art oratoire et la musique des mots. Comme Anansi, je gagne par la parole.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Scoutisme : retourner la carte"><div class="fi"><div class="f" style="background:var(--teal)"><em>⚜️</em><h3>Scoutisme</h3></div><div class="bk">Groupe Yopougon Amérindiens : le collectif, l'entraide, les responsabilités.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Musique : retourner la carte"><div class="fi"><div class="f" style="background:var(--violet);color:#fff"><em>🎶</em><h3>Musique</h3></div><div class="bk">La musique et le rythme, qui nourrissent aussi l'écriture et la scène.</div></div></div>
+  </div>
+  <ul class="engage">
+    <li><span>🧑‍💻</span>Responsable informatique du Réseau Entrepreneurial des Jeunes Chrétiens Catholiques (REJCC).</li>
+    <li><span>🧠</span>Accompagnement d'étudiants en algorithmique.</li>
+    <li><span>📚</span>Création d'un programme de formation bureautique de 10 semaines.</li>
+    <li><span>🖥️</span>Reconditionnement de postes informatiques pour une bibliothèque de village.</li>
+  </ul>
+</section>
+
+<!-- ================= CHAPITRE 8 : LA SUITE ================= -->
+<section id="suite" data-say="La suite du conte s'écrit maintenant. J'ai hâte !">
+  <span class="chap">🌱 Chapitre 8 · La suite</span>
+  <h2 class="h2 sm split">Les quêtes de mai 2026 à mai 2027.</h2>
+  <div class="quests">
+    <article class="quest" style="background:var(--gold)"><span class="tag">Quête 1</span><h3>Full Stack &amp; Mobile confirmé</h3><p>Maîtriser toute la chaîne : front, back, mobile, API, bases de données, serveurs et déploiement.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+    <article class="quest" style="background:var(--teal)"><span class="tag">Quête 2</span><h3>Spécialiste en cybersécurité</h3><p>Authentification, autorisation, protection des API, audits, vulnérabilités, protection des données.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+    <article class="quest" style="background:#d9cfff"><span class="tag">Quête 3</span><h3>L'IA au cœur du travail</h3><p>Analyse, audit, documentation, tests : travailler avec l'IA sans jamais perdre la compréhension technique.</p><div class="bar"><i></i></div><p class="bar-label">Quête en cours</p></article>
+  </div>
+  <a class="more" href="contact.html">Écrire la suite ensemble →</a>
+</section>
+
+<!-- ================= FIN : CONTACT ================= -->
+<section class="contact dark" id="contact" data-say="Fin du conte ? Non : écris-lui !">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="cweb" id="cweb" aria-hidden="true"></div>
+  <p class="tale">Et le conte continue…</p>
+  <h2 class="h2 split">avec toi ?</h2>
+  <div class="row">
+    <a class="btn" href="mailto:menofgucci200@gmail.com" id="mailBtn"><span>menofgucci200@gmail.com</span></a>
+    <button class="btn ghost" id="copyBtn"><span>Copier l'adresse 📋</span></button>
+  </div>
+  <div class="contact-list">
+    <a href="tel:+2250161133466">+225 01 61 13 34 66</a>
+    <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="assets/docs/CV-Stephane-Say-2026.pdf" download>CV (PDF) ↓</a>
+    <span>Abidjan, Côte d'Ivoire</span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

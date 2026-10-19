@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projets — PressLink, Bo Séjour, REJCC · Stéphane Say</title>
+<meta name="description" content="Les projets de Stéphane Say : PressLink (logiciel de gestion pour pressings, presslink.org), Bo Séjour (réservation d'hébergements, bosejour.ci) et la plateforme du REJCC (rejcc.site).">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Projets — PressLink, Bo Séjour, REJCC · Stéphane Say">
+<meta property="og:description" content="Les projets de Stéphane Say : PressLink (logiciel de gestion pour pressings, presslink.org), Bo Séjour (réservation d'hébergements, bosejour.ci) et la plateforme du REJCC (rejcc.site).">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Ma toile ! Touche un nœud, ou descends lire les histoires.">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="ananse" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Projets</p>
+  <span class="chap">🕸️ Chapitre 5 · La toile</span>
+  <h1 class="split">Trois projets pris dans la toile.</h1>
+  <p class="lead">Un produit personnel, un projet client et une plateforme associative. Touche un nœud de la toile, ou descends pour lire chaque histoire.</p>
+</section>
+
+<section id="toile" data-say="Ma toile préférée : ses projets. Touche un nœud !">
+  <div>
+    <div class="webwrap" id="webwrap"><svg id="websvg" aria-hidden="true"><path id="webpath"/></svg><div class="webhub" id="webhub" aria-hidden="true"></div></div>
+  </div>
+  <div class="pstage" id="pstage" aria-live="polite">
+    <article class="pcard on" style="background:var(--gold)" id="p-presslink">
+      <div><small>Produit personnel · 2026</small><h3>PressLink</h3><p>« Le lien entre votre pressing et vos clients. » Suivi des commandes en temps réel et notification du client quand ses vêtements sont prêts.</p>
+        <div class="tags"><span>Laravel</span><span>Livewire</span><span>Flutter</span><span>MySQL</span><span>PWA</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#presslink"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://presslink.org/" target="_blank" rel="noopener"><span>presslink.org ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/PressLink" target="_blank" rel="noopener"><span>Code source ↗</span></a></div></div>
+      <div class="scene" style="background:var(--pink)" aria-hidden="true">
+        <div class="machine"><div class="panel"><i></i><i></i><em>PL-4K7Q2M</em></div><div class="door"><div class="drum"><b style="background:var(--gold);left:8%;top:12%"></b><b style="background:var(--violet);right:6%;top:30%"></b><b style="background:var(--teal);left:22%;bottom:8%"></b></div></div></div>
+        <span class="ticket">Prête ✓</span>
+      </div>
+    </article>
+    <article class="pcard" style="background:var(--teal)" id="p-bosejour">
+      <div><small>Projet client · LKM Digital</small><h3>Bo Séjour</h3><p>Plateforme de réservation d'hébergements : refonte complète, espaces voyageur et partenaire, paiement en ligne, notifications WhatsApp.</p>
+        <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>MySQL</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#bosejour"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://bosejour.ci/" target="_blank" rel="noopener"><span>bosejour.ci ↗</span></a></div></div>
+      <div class="scene" aria-hidden="true"><div class="sky"></div><div class="sun"></div>
+        <div class="house"><div class="roof"></div><div class="walls"><span class="win" style="left:12%"></span><span class="win" style="right:12%"></span><span class="doorh"></span></div></div>
+        <div class="ground"></div><div class="cal" id="cal"></div><span class="paid">Payé ✓</span>
+      </div>
+    </article>
+    <article class="pcard" style="background:#d9cfff" id="p-rejcc">
+      <div><small>Responsable informatique · 2026</small><h3>REJCC</h3><p>Plateforme officielle du Réseau Entrepreneurial des Jeunes Chrétiens Catholiques : adhésion en ligne, carte membre QR, événements, mentorat.</p>
+        <div class="tags"><span>Laravel</span><span>Livewire</span><span>Tailwind CSS</span><span>MySQL</span></div>
+        <div class="actions"><a class="btn small" href="projets.html#rejcc"><span>Lire l'histoire →</span></a><a class="btn small ghost" href="https://rejcc.site/" target="_blank" rel="noopener"><span>rejcc.site ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/rejcc" target="_blank" rel="noopener"><span>Code source ↗</span></a></div></div>
+      <div class="scene cardwrap" style="background:var(--violet)" aria-hidden="true">
+        <div class="mcard" id="mcard"><div class="mface"><small>REJCC · Membre</small><b>Stéphane Say</b><small>Responsable informatique</small></div><div class="mface back"><div class="qr" id="qr"></div><div><b>Scanne-moi</b><br><small>Carte membre</small></div></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="project-full" id="presslink" data-say="PressLink, son bébé. Construit tout seul !">
+  <div class="pf-head" style="background:var(--gold)">
+    <div class="pf-sym" data-adk="aya" data-sw="7" aria-hidden="true"></div>
+    <small>Produit personnel · 2026 · conçu et développé seul</small><h2>PressLink</h2>
+    <p>« Le lien entre votre pressing et vos clients. » Un logiciel de gestion pour pressings : API, tableau de bord pour le pressing et application client installable sur mobile.</p>
+    <div class="actions"><a class="btn small ghost" href="https://presslink.org/" target="_blank" rel="noopener"><span>presslink.org ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/PressLink" target="_blank" rel="noopener"><span>Code source ↗</span></a></div>
+  </div>
+  <div class="case-body">
+    <div class="case-block"><h3>😩 Le problème</h3><p>Dans un pressing, le client appelle ou se déplace pour savoir si ses vêtements sont prêts. Le gérant, lui, jongle entre tickets papier et cahiers.</p></div>
+    <div class="case-block"><h3>💡 La solution</h3><p>Chaque dépôt devient une commande suivie, avec un identifiant <b>PL-XXXXXX</b>, un historique des statuts et une notification au client dès que tout est prêt.</p></div>
+    <div class="case-block"><h3>🧱 Ce que j'ai construit</h3><ul><li>API Laravel sécurisée avec Sanctum</li><li>Tableau de bord Livewire pour les pressings</li><li>Application client installable (PWA) et Flutter</li><li>Notifications (FCM)</li><li>Services, tarifs, variantes, couleurs, équipe, formules d'abonnement</li></ul></div>
+    <div class="case-block"><h3>👥 Quatre rôles</h3><ul><li>Client</li><li>Employé</li><li>Administrateur de pressing</li><li>Super administrateur</li></ul><p style="margin-top:10px">Association client/pressing par code, données séparées par pressing.</p></div>
+    <div class="case-block wide"><h3>🛡️ Sécurité</h3><p>Isolation des données entre pressings, contrôles de propriété sur chaque commande, correction d'une faille de type IDOR, blocage des pressings suspendus, refus des statuts invalides, suppressions réversibles (soft delete).</p></div>
+    <div class="case-block wide"><h3>💼 Le modèle commercial</h3><p>Une vente directe adaptée au terrain : installation, configuration, formation, maintenance et support inclus.</p>
+      <div class="offers"><div><b>Starter</b><strong>20 000 FCFA</strong><span>par mois · installation 100 000 FCFA</span></div><div><b>Business</b><strong>30 000 FCFA</strong><span>par mois · installation 200 000 FCFA</span></div><div><b>Premium</b><strong>50 000 FCFA</strong><span>par mois · installation 350 000 FCFA</span></div></div></div>
+    <div class="case-block wide"><h3>🧰 Stack</h3><div class="tags"><span>Laravel</span><span>Livewire</span><span>Sanctum</span><span>Flutter</span><span>Riverpod</span><span>FCM</span><span>MySQL</span><span>PWA</span></div></div>
+  </div>
+</section>
+
+<section class="project-full" id="bosejour" data-say="Bo Séjour : réserver et payer en sécurité.">
+  <div class="pf-head" style="background:var(--teal)">
+    <div class="pf-sym" data-adk="eban" data-sw="7" aria-hidden="true"></div>
+    <small>Projet client · LKM Digital · 2026</small><h2>Bo Séjour</h2>
+    <p>Plateforme de réservation d'hébergements, en ligne sur bosejour.ci. Ma mission : la refonte globale du produit.</p>
+    <div class="actions"><a class="btn small ghost" href="https://bosejour.ci/" target="_blank" rel="noopener"><span>bosejour.ci ↗</span></a></div>
+  </div>
+  <div class="case-body">
+    <div class="case-block"><h3>🎨 Refonte complète</h3><ul><li>Nouveau design</li><li>Parcours de réservation complet</li><li>Espaces voyageur et partenaire</li><li>Tableaux de bord</li></ul></div>
+    <div class="case-block"><h3>💳 Paiement &amp; notifications</h3><p>Intégration du paiement en ligne et des notifications WhatsApp envoyées aux voyageurs.</p></div>
+    <div class="case-block wide"><h3>🛡️ Sécurité</h3><p>Renforcement de la sécurité à la suite d'un audit externe, et mise en place de sauvegardes automatiques.</p></div>
+    <div class="case-block wide"><h3>📚 Ce que ça m'a appris</h3><p>Travailler sur un logiciel utilisé par de vrais clients : bugs remontés par les utilisateurs, paiements, redirections, compatibilité, déploiement et maintenance. Bien loin des exercices.</p></div>
+    <div class="case-block wide"><h3>🧰 Stack</h3><div class="tags"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>MySQL</span></div><p style="margin-top:14px"><a class="btn small" href="https://bosejour.ci" target="_blank" rel="noopener"><span>Visiter bosejour.ci ↗</span></a></p></div>
+  </div>
+</section>
+
+<section class="project-full" id="rejcc" data-say="Le REJCC : une communauté qui s'entraide.">
+  <div class="pf-head" style="background:#d9cfff">
+    <div class="pf-sym" data-adk="akoma" data-sw="7" aria-hidden="true"></div>
+    <small>Responsable informatique · 2026</small><h2>REJCC</h2>
+    <p>La plateforme officielle du Réseau Entrepreneurial des Jeunes Chrétiens Catholiques, conçue et développée en tant que responsable informatique du réseau.</p>
+    <div class="actions"><a class="btn small ghost" href="https://rejcc.site/" target="_blank" rel="noopener"><span>rejcc.site ↗</span></a><a class="btn small ghost" href="https://github.com/menofgucci200-tech/rejcc" target="_blank" rel="noopener"><span>Code source ↗</span></a></div>
+  </div>
+  <div class="case-body">
+    <div class="case-block"><h3>🧩 La plateforme</h3><ul><li>Adhésion en ligne</li><li>Espace membre</li><li>Carte de membre avec QR code</li><li>Événements, mentorat et opportunités</li><li>Back-office d'administration complet</li></ul></div>
+    <div class="case-block"><h3>🚀 Mise en ligne</h3><p>Déploiement sur Hostinger, tests de la plateforme et documentation d'utilisation pour l'équipe.</p></div>
+    <div class="case-block wide"><h3>🤝 Au-delà du code</h3><p>Structuration de l'équipe informatique, fiche de poste et fiche d'orientation, présentation des missions et des sujets techniques lors des réunions du Bureau Exécutif.</p></div>
+    <div class="case-block wide"><h3>🧰 Stack</h3><div class="tags"><span>Laravel</span><span>Livewire</span><span>Tailwind CSS</span><span>MySQL</span><span>Hostinger</span></div></div>
+  </div>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="competences.html"><small>← Chapitre 3</small><b>Les poids de l'or</b></a><a class="next" href="securite.html"><small>Chapitre 6 →</small><b>Le bouclier</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

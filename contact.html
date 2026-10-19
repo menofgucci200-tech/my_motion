@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Stéphane Say, développeur à Abidjan</title>
+<meta name="description" content="Contacter Stéphane Say, développeur Full Stack & Mobile à Abidjan : stage, missions freelance, collaborations. E-mail, téléphone, GitHub et CV en PDF.">
+<meta name="author" content="Stéphane Say">
+<meta name="theme-color" content="#2b2d6e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Contact — Stéphane Say, développeur à Abidjan">
+<meta property="og:description" content="Contacter Stéphane Say, développeur Full Stack & Mobile à Abidjan : stage, missions freelance, collaborations. E-mail, téléphone, GitHub et CV en PDF.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/main.css">
+<noscript><style>.mascot,.pg-cursor,.curtain{display:none!important}.pill{position:relative;visibility:visible;display:inline-block;margin:6px}.pit{height:auto;display:flex;flex-wrap:wrap;padding:30px}.pcard{position:relative;visibility:visible;margin-bottom:20px}.pstage{min-height:0}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -10" result="g"/><feBlend in="SourceGraphic" in2="g"/></filter></svg>
+
+<!-- Anansi, l'araignée : réutilisée dans l'intro, la mascotte, la frise et la toile -->
+<template id="spiderTpl">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <g class="legs">
+      <path d="M48 66 Q30 44 10 50"/><path d="M48 70 Q26 60 6 70"/><path d="M48 75 Q26 80 8 94"/><path d="M50 80 Q36 96 20 112"/>
+      <path d="M72 66 Q90 44 110 50"/><path d="M72 70 Q94 60 114 70"/><path d="M72 75 Q94 80 112 94"/><path d="M70 80 Q84 96 100 112"/>
+    </g>
+    <ellipse cx="60" cy="76" rx="26" ry="23" fill="#f4b400" stroke="#2b2d6e" stroke-width="4"/>
+    <path d="M40 72 H80 M42 82 H78" stroke="#2b2d6e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 92 l8 -6 l8 6" fill="none" stroke="#ff5c8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="18" fill="#2b2d6e"/>
+    <circle cx="52" cy="43" r="7.5" fill="#fff"/><circle cx="68" cy="43" r="7.5" fill="#fff"/>
+    <circle class="pupil" cx="52" cy="43" r="3.6" fill="#2b2d6e"/><circle class="pupil" cx="68" cy="43" r="3.6" fill="#2b2d6e"/>
+    <path d="M53 53 Q60 58 67 53" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="46" cy="52" r="3" fill="#ff5c8a" opacity=".8"/><circle cx="74" cy="52" r="3" fill="#ff5c8a" opacity=".8"/>
+  </svg>
+</template>
+
+<div class="mascot" id="mascot" aria-hidden="true">
+  <div class="thread"></div>
+  <div class="body" id="mbody" title="Anansi"></div>
+  <div class="say" id="say">Psst ! Moi c'est Anansi.</div>
+</div>
+<div class="toast" id="toast" role="status">Adresse copiée ✨</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="logo" href="index.html" aria-label="Accueil">SS</a>
+  <a href="heros.html">Le héros</a><a href="voyage.html">Le voyage</a><a href="competences.html">L'or</a><a href="projets.html">Projets</a><a href="securite.html">Sécurité</a><a href="contact.html">Contact</a><a class="cv-link" href="cv.html">CV</a>
+  <button class="toggle-anansi" id="toggleAnansi" aria-pressed="true" title="Afficher ou masquer Anansi"><img src="assets/img/favicon.svg" alt="" width="22" height="22"><span class="sr-only">Anansi</span></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="index.html"><small>Il était une fois</small>Accueil</a>
+  <a href="heros.html"><small>Chapitre 1</small>Le héros</a>
+  <a href="voyage.html"><small>Chapitre 2</small>Le voyage</a>
+  <a href="competences.html"><small>Chapitre 3</small>Les poids de l'or</a>
+  <a href="projets.html"><small>Chapitre 5</small>Les projets</a>
+  <a href="securite.html"><small>Chapitre 6</small>Le bouclier</a>
+  <a href="contact.html"><small>Fin</small>Contact</a>
+  <a href="cv.html"><small>En une page</small>Mon CV</a>
+  <button class="menu-anansi" id="menuAnansi">🕷️ Masquer Anansi</button>
+</div>
+
+<main id="contenu">
+<section class="page-head" id="top" data-say="Tu es arrivé au bout du conte. Écris-lui !">
+  <div class="page-web" aria-hidden="true"></div>
+  <div class="page-glyph" data-adk="sankofa" aria-hidden="true"></div>
+  <p class="crumbs"><a href="index.html">Accueil</a> · Contact</p>
+  <span class="chap">💌 Fin · Contact</span>
+  <h1 class="split">Et le conte continue… avec toi ?</h1>
+  <p class="lead">Stage, mission freelance, collaboration ou simple question : écris-moi, je réponds vite.</p>
+</section>
+
+<section id="cherche" data-say="Voici ce qu'il cherche. Tu as peut-être ce qu'il faut ?">
+  <span class="chap">🎯 Ce que je cherche</span>
+  <h2 class="section-title split">Trois façons de travailler ensemble.</h2>
+  <div class="wants" data-reveal style="margin-top:6vh">
+    <article style="background:var(--gold)"><em>🎓</em><h3>Un stage</h3><p>En développement web et mobile ou en sécurité applicative, pour apprendre auprès d'une équipe expérimentée.</p></article>
+    <article style="background:var(--teal)"><em>💻</em><h3>Des missions freelance</h3><p>Sites, applications et back-offices en Laravel, Next.js ou Flutter, du besoin client à la mise en ligne.</p></article>
+    <article style="background:#d9cfff"><em>🤝</em><h3>Des collaborations</h3><p>Projets associatifs, produits utiles, formations : j'aime construire à plusieurs.</p></article>
+  </div>
+  <div class="cv-card">
+    <div>
+      <span class="chap">📄 Mon CV</span>
+      <h2 class="section-title split">Toute l'histoire sur une seule diapositive.</h2>
+      <p class="lead">Mon CV tient sur une page au format 16:9, animée comme le reste du conte, avec mes projets personnels en vedette. Et il se télécharge en PDF.</p>
+      <div class="actions"><a class="btn" href="cv.html"><span>Voir le CV animé →</span></a><a class="btn ghost" href="assets/docs/CV-Stephane-Say-2026.pdf" download><span>Télécharger le PDF ↓</span></a></div>
+    </div>
+    <a class="cv-thumb tilt" href="cv.html" aria-label="Voir le CV en une page"><img src="assets/img/cv-preview.png" alt="Aperçu du CV de Stéphane Say en une diapositive" width="1600" height="900" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="contact dark" id="contact" data-say="Fin du conte ? Non : écris-lui !">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="cweb" id="cweb" aria-hidden="true"></div>
+  <p class="tale">Et le conte continue…</p>
+  <h2 class="h2 split">avec toi ?</h2>
+  <div class="row">
+    <a class="btn" href="mailto:menofgucci200@gmail.com" id="mailBtn"><span>menofgucci200@gmail.com</span></a>
+    <button class="btn ghost" id="copyBtn"><span>Copier l'adresse 📋</span></button>
+  </div>
+  <div class="contact-list">
+    <a href="tel:+2250161133466">+225 01 61 13 34 66</a>
+    <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="assets/docs/CV-Stephane-Say-2026.pdf" download>CV (PDF) ↓</a>
+    <span>Abidjan, Côte d'Ivoire</span>
+  </div>
+</section>
+<nav class="pager" aria-label="Chapitres"><a class="prev" href="securite.html"><small>← Chapitre 6</small><b>Le bouclier</b></a><a class="next" href="cv.html"><small>En une page →</small><b>Mon CV</b></a></nav>
+</main>
+
+<footer>
+  <span>© 2026 Stéphane Say · Abidjan</span>
+  <span><a href="cv.html">CV en une page</a> · <a href="https://github.com/menofgucci200-tech" target="_blank" rel="noopener">GitHub</a> · Conté par Anansi 🕷️</span>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/matter.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
